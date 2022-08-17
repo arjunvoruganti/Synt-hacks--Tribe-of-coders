@@ -87,16 +87,19 @@ void loop() {
   else if(ls == "LOW"  && cs == "HIGH" && rs == "LOW")
   {
    left();
+   delay(1000);
+   forward();
+   delay(2000);
   }
 
   else if(ls == "HIGH" && cs == "HIGH" && rs == "HIGH")
   {
+   right();
+   delay(1000);
    forward();
+   delay(2000);
   }
-  else if(ls == "LOW" && cs == "LOW" && rs == "LOW")
-  {
-   stp();
-  }
+
   else if(ls == "HIGH" && cs == "LOW" && rs == "LOW")
   {
    reverse();
@@ -112,8 +115,14 @@ void loop() {
   else if(ls == "LOW" && cs == "HIGH" && rs == "HIGH")
   {
    stpright();
+  }
+  else if(ls == "LOW" && cs == "LOW" && rs == "LOW")
+  {
+   stp();
+   delay(1000);
    lcd.setCursor(0, 1);
    lcd.print("Reached spot");
   }
 }
+
  
